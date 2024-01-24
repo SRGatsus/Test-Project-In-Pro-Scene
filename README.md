@@ -47,3 +47,9 @@ There are two ways to launch a project:
    * Переход по url указаном в консоле
 
 2. Запуск докер контейнера 
+   * Установка docker с официального сайта
+   * Выполнить команду в консоле
+   ```cmd
+    docker-compose build
+    ```
+   * Перейти по ссылки: http://localhost/
