@@ -53,12 +53,12 @@ export function EditTask({isOpen, setIsOpen, task, setSelectTask}) {
                                 bgColor="#0879d3"
                                 border='1px'
                                 color="#fff"
-                                type="button"
+                                type="submit"
                                 _hover={{ bg: "#06549a" }}
                                 onClick={onClose}>
                             Назад
                         </Button>
-                        <Button type="button" colorScheme="teal"
+                        <Button type="submit" colorScheme="teal"
                                 borderColor="#000"
                                 bgColor="#0879d3"
                                 border='1px'

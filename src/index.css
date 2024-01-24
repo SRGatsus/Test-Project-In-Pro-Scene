@@ -1,3 +1,33 @@
-.custom-hide{
-    display:none
+.custom-hide {
+    display: none
+}
+
+.tasks-element {
+    border: 1px solid #0879d3;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 450px;
+    min-height: 50px;
+
+}
+
+.tasks-element-enter {
+    opacity: 0;
+}
+
+.tasks-element-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.tasks-element-exit {
+    opacity: 1;
+}
+
+.tasks-element-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
 }

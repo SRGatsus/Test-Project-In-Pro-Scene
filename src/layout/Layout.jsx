@@ -1,13 +1,10 @@
-import {Header} from "../components/header/Header.jsx";
 import {Outlet} from "react-router-dom";
-import {Divider} from "@chakra-ui/react";
 
 
-export function Layout({listNav}) {
+
+export function Layout() {
     return (
         <>
-            <Header listNav={listNav}/>
-            <Divider />
             <Outlet/>
         </>
     )

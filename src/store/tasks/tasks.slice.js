@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {createRef} from "react";
 
 const initialState = []
 export const tasksSlice = createSlice({
@@ -6,6 +7,7 @@ export const tasksSlice = createSlice({
     initialState: initialState,
     reducers: {
         addToTasks: (state, {payload}) => {
+            payload.nodeRef = createRef(null)
             state.push(payload)
         },
         removeToTasks: (state, {payload}) => {
@@ -14,13 +16,14 @@ export const tasksSlice = createSlice({
             if (index !== -1) {
                 state.splice(index, 1)
             }
+
         },
         editTask: (state, {payload}) => {
             let {id, title} = payload
             let task = state.find(task => task.id === id)
             task.title = title
         },
-        changeTask: (state, {payload}) => {
+        changeStatusTask: (state, {payload}) => {
             let {id, status} = payload
             let task = state.find(task => task.id === id)
             task.status = status

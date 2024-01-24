@@ -4,20 +4,10 @@ import {Layout} from "./layout/Layout.jsx";
 
 
 function App() {
-    const listNav = [{
-        "path": "/",
-        "title": "Тестовое задание в компанию \"ООО Про-Сцена\"",
-        "name_menu": "Задачи"
-    },
-        {
-            "path": "/info",
-            "title": "Техническое задание",
-            "name_menu": "О проекте"
-        }
-    ]
+
     return (
         <Routes>
-            <Route element={<Layout listNav={listNav} />}>
+            <Route element={<Layout  />}>
                 <Route path="/" element={<TasksPage/>}/>
             </Route>
         </Routes>
