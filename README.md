@@ -1,8 +1,49 @@
-# React + Vite
+# A test assignment for the company "Pro-Scene" 
+The project was completed as a test assignment for an interview with the company
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technical specification
+>Задание: Разработать веб-приложение для управления задачами (таск-менеджер), используя React.js.\
+>Основные требования:
+> - Интерфейс пользователя:
+> - Главная страница со списком задач.
+> - Возможность добавления новых задач.
+> - Возможность отмечать задачи как выполненные.
+> - Возможность удалять задачи.
+> 
+>Функциональность:
+> - Сохранение состояния приложения между сессиями (использование localStorage).
+> - Простая валидация ввода (например, нельзя добавить пустую задачу).\
+>
+>Дизайн:
+> - Чистый и интуитивно понятный интерфейс.
+> - Адаптивный дизайн, корректно отображающийся на различных устройствах.
+> 
+>Код:
+> - Чистый и модульный код.
+> - Использование функциональных компонентов и хуков React.
+> - Комментарии к ключевым участкам кода.
+>
+> Дополнительно (для продвинутых):
+> - Использование Redux или Context API для управления состоянием.
+> - Реализация функционала фильтрации задач (например, посмотреть только выполненные или только активные задачи).
+> - Анимации при добавлении/удалении задач.
+> 
+>Результат:
+> - Проект должен быть загружен на GitHub с четким README, описывающим как запустить проект локально. 
+> - Размещение проекта на GitHub Pages или другой платформе для демонстрации работы приложения в реальном времени.
 
-Currently, two official plugins are available:
+## Project Launch
+There are two ways to launch a project:
+1. Локально\
+Нужно Выполнить следующие дейсвтия
+   * Установка библиотек
+   ```npm
+    npm install
+    ```
+    * Запуск проекта
+   ```npm
+    npm start dev
+    ```
+   * Переход по url указаном в консоле
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Запуск докер контейнера 

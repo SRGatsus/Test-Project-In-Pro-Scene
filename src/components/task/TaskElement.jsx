@@ -27,18 +27,28 @@ export function TaskElement({task, handleEditClick}) {
     }
     const {changeStatusTask} = useActions()
 
-    function changeStatus(id, status) {
+    function handleChangeStatus(id, status) {
         changeStatusTask({id, status})
         toast({
             title: "Статус успешно изменен", status: "success", duration: 2000, isClosable: true,
         })
     }
 
+    function handleRemoveTask(event,id){
+        // const container = event.currentTarget.closest("article");
+        // container.style.transition = "all 0.5s";
+        // container.style.opacity = "0";
+        // setTimeout(function() {
+        //     removeToTasks(id)
+        // }, 700)
+        removeToTasks(id)
+    }
+
     return (
         <article itemProp="itemListElement" itemScope className="tasks-element"
                  itemType="https://schema.org/ListItem"
         >
-            <VStack spacing="24px"  key={task.id}>
+            <VStack spacing="24px" >
                 <Flex  w="100%" h="100%" justifyContent="space-between"  flexWrap="wrap">
                     <Text
                         fontSize='xl'
@@ -55,7 +65,7 @@ export function TaskElement({task, handleEditClick}) {
                             cursor="pointer"
                             color="red.500"
                             mr="2"
-                            onClick={() => removeToTasks(task.id)}/>
+                            onClick={(event) => handleRemoveTask(event,task.id) }/>
                         <Spacer/>
                         <EditIcon
                             h="18px"
@@ -82,7 +92,7 @@ export function TaskElement({task, handleEditClick}) {
                                     color="#fff"
                                     type="button"
                                     _hover={{bg: "#6e0c0c"}}
-                                    onClick={() => changeStatus(task.id, ETaskStatus.CANCEL)}
+                                    onClick={() => handleChangeStatus(task.id, ETaskStatus.CANCEL)}
                             >
                                 Отменить
                             </Button>
@@ -96,7 +106,7 @@ export function TaskElement({task, handleEditClick}) {
                                     color="#fff"
                                     type="button"
                                     _hover={{bg: "#06549a"}}
-                                    onClick={() => changeStatus(task.id, ETaskStatus.WORK)}
+                                    onClick={() => handleChangeStatus(task.id, ETaskStatus.WORK)}
                             >
                                 Делаю
                             </Button>
@@ -111,7 +121,7 @@ export function TaskElement({task, handleEditClick}) {
                                     color="#fff"
                                     type="button"
                                     _hover={{bg: "#167205"}}
-                                    onClick={() => changeStatus(task.id, ETaskStatus.END)}
+                                    onClick={() => handleChangeStatus(task.id, ETaskStatus.END)}
                             >
                                 Завершить
                             </Button>

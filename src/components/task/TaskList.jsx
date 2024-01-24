@@ -3,7 +3,8 @@ import {TaskElement} from "./TaskElement.jsx";
 import {useSelector} from "react-redux";
 import {EditTask} from "../../views/modal/editTask/EditTask.jsx";
 import {useMemo, useState} from "react";
-import {TransitionGroup, CSSTransition} from "react-transition-group";
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+import Fade from 'react-reveal/Fade';
 import {TaskFilter} from "./TaskFilter.jsx";
 
 
@@ -38,32 +39,28 @@ export function TaskList() {
                         <VStack>
                             <TaskFilter setFilterStatus={setFilterStatus} filterStatus={filterStatus}/>
                             {!visibleTodos.length ?
-                            <Badge
-                            color="#0879d3"
-                            borderColor="#0879d3"
-                            variant="outline"
-                            borderRadius="4"
-                            p='4' m='5'
-                        >Задач в данной категории нет</Badge> :
-                            <TransitionGroup
-                                className="task-list"
-                            >
-                                {visibleTodos.map((task) => (
-                                     (
-                                        <CSSTransition
-                                            key={task.id}
-                                            nodeRef={task.nodeRef}
-                                            timeout={2400}
-                                            classNames="tasks-element"
-                                        >
-                                            <TaskElement
-                                                task={task}
-                                                handleEditClick={handleEditClick}
-                                            />
-                                        </CSSTransition>)
-                                ))}
-                            </TransitionGroup>}
-
+                                <Badge
+                                    color="#0879d3"
+                                    borderColor="#0879d3"
+                                    variant="outline"
+                                    borderRadius="4"
+                                    p='4' m='5'
+                                >Задач в данной категории нет</Badge> :
+                                <TransitionGroup appear={true} enter={true} exit={true}>
+                                    {
+                                        visibleTodos.map((task) => (
+                                            (
+                                                <Fade key={task.id} collapse left>
+                                                    <TaskElement
+                                                        task={task}
+                                                        handleEditClick={handleEditClick}
+                                                    />
+                                                </Fade>
+                                            )
+                                        ))
+                                    }
+                                </TransitionGroup>
+                            }
                         </VStack>
 
                     )
