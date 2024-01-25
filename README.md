@@ -34,22 +34,24 @@ The project was completed as a test assignment for an interview with the company
 
 ## Project Launch
 There are two ways to launch a project:
-1. Локально\
-Нужно Выполнить следующие дейсвтия
-   * Установка библиотек
+1. Locally\
+You need to perform the following actions
+   * Change\Delete the "homepage" parameter in the file: package.json
+   * Installing libraries
    ```npm
     npm install
     ```
-    * Запуск проекта
+    * Project Launch
    ```npm
     npm start dev
     ```
-   * Переход по url указаном в консоле
+   * Navigating to the url specified in the console
 
-2. Запуск докер контейнера 
-   * Установка docker с официального сайта
-   * Выполнить команду в консоле
+2. Launching the docker container
+   * Installing docker from the official website
+   * Change\Delete the "homepage" parameter in the file: package.json
+   * Run the command in the console
    ```cmd
     docker-compose build
     ```
-   * Перейти по ссылки: http://localhost/
+   * Click on the link: http://localhost/
